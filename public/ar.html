@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://aframe.io/releases/0.8.0/aframe.min.js"></script>
+    <script src="https://google-ar.github.io/three.ar.js/dist/three.ar.js"></script>
+    <script src="https://rawgit.com/chenzlabs/aframe-ar/827e9db/dist/aframe-ar.min.js"></script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+  </head>
+  <body>
+    <a-scene ar>
+      <a-assets>
+        <video id="my-video" src="./assets/IMG_4643.MOV" autoplay loop webkit-playsinline playsinline></video>
+        <img id="my-photo" src="./assets/IMG_4630.jpg">
+      </a-assets>
+      <!-- <a-box src="#my-photo" width="0.75" height="1" depth="0.02" position="-0.75 0.15 -1.75" rotation="0 45 0"></a-box> -->
+      <a-video src="#my-video" class="clickable" width="0.75" height="1" position="-0.75 0.15 -1.25" rotation="0 45 0"></a-video>
+      <!-- <a-box width="0.75" height="1" depth="0.02" position="-0.75 0.15 -1.25" rotation="0 45 0" color="#4CC3D9"></a-box> -->
+    </a-scene>
+  </body>
+  <script>
+    var video = document.querySelector('video');
+    video.addEventListener('touchstart',() => {
+      video.play();
+    });
+  </script>
+</html>
